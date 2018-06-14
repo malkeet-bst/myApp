@@ -1,1 +1,1 @@
-console.log('test3');
+console.log('finished with setup');
