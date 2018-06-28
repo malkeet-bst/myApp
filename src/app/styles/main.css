@@ -1,4 +1,90 @@
-.row {
-    max-width: 10vw;
-    background-color: black;
+.heading {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 10px 0px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: lighter;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background: lightslategrey;
+    z-index: 1000;
 }
+
+.heading .logo {
+    width: 36px;
+}
+
+.header-item {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+.header-item-content {
+    padding: 14px 28px 0 28px;
+}
+
+.header-item-label {
+    padding: 16px 42px 0 42px;
+}
+
+.seacrhContainer {
+    width: 20rem;
+    margin-top: 9px;
+}
+.cartValue{
+    position: relative;
+    right: -68px;
+    top: 17px;
+}
+.searchIcon {
+    position: relative;
+    left: -23px;
+    color: black;
+    top: 16px;
+}
+
+.cartIcon {
+    position: relative;
+    top: 16px;
+    left: 56px;
+}
+
+.myAccount {
+    top: 6px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.expandIcon {
+    position: relative;
+    left: 4px;
+    top: 9px;
+}
+
+.searchBox {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    font-size: 12px;
+    height: 36px;
+    margin-right: -43px;
+    width: 100%;
+    border-radius: 18px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    outline: 0px;
+    padding: 0px 56px 0px 16px;
+}
+
+/* .header-item--address:before{
+    content: "r";
+    font-family: IconFont;
+    font-style: normal;
+    font-size: 16px;
+    left: 0px;
+    position: absolute;
+} */
