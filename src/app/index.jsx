@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom'
+//import If from 'components/If'
 //import StoreItem from './StoreItem'
 class App extends React.Component {
     constructor() {
@@ -15,18 +16,34 @@ class App extends React.Component {
         });
     }
     render() {
-        let list = ''
-        console.log(this.data.redeemable_items)
-        const listItems = this.data.redeemable_items.map((item, index) =>
-            <div key={index} className="listItems">
-                <img className="itemImage" src={item.icon_url} />
-                <div className="pointsDetail">
-                    <div className="pointsToAward">{item.points_to_award} </div>
-                    <div className="pointSummary">{item.item_display_name}</div>
-                    {/* <div className="pointCurr">${item.buying_options.usd.usd_required}</div> */}
-                </div>
-            </div>
-        )
+        let listItems = []
+        const listArr = this.data.redeemable_items.map(item => {
+            if (item.item_display_name.toLowerCase().includes(this.state.name.toLowerCase())) {
+                return item;
+
+            }
+        })
+        if (listArr && listArr.length > 0) {
+            listItems = listArr.map((item, index) => {
+                if (item) {
+                    return (
+                        <div key={index} className="listItems">
+                            <img className="itemImage" src={item.icon_url} />
+                            <div className="pointsDetail">
+                                <div className="pointsToAward">{item.points_to_award} </div>
+                                <div className="pointSummary">{item.item_display_name}</div>
+                                {/* <div className="pointCurr">${item.buying_options.usd.usd_required}</div> */}
+                            </div>
+                        </div>
+                    )
+                }
+            }
+
+            )
+        }
+
+
+
         return (
             <div className="" >
                 <div className="heading" >
