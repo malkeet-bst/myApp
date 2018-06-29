@@ -79,6 +79,8 @@
 }
 .listItems:hover{
     border: 1px solid #000;
+    /* background: darkgray; */
+    cursor: pointer;
 }
 .listContainer {
     display: flex;

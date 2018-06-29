@@ -15,6 +15,9 @@ class App extends React.Component {
             name: event.target.value
         });
     }
+    onMoreDetailsClicked(item){
+        console.log(item)
+    }
     render() {
         let listItems = []
         const listArr = this.data.redeemable_items.map(item => {
@@ -27,7 +30,7 @@ class App extends React.Component {
             listItems = listArr.map((item, index) => {
                 if (item) {
                     return (
-                        <div key={index} className="listItems">
+                        <div key={index} className="listItems" onClick={() => this.onMoreDetailsClicked(item)}>
                             <img className="itemImage" src={item.icon_url} />
                             <div className="pointsDetail">
                                 <div className="pointsToAward">{item.points_to_award} </div>
