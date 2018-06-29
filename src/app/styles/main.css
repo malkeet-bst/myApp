@@ -25,64 +25,23 @@
     display: flex;
     flex-direction: row;
     align-items: end;
-}
-
-.header-item-content {
-    padding: 14px 28px 0 28px;
-}
-
-.header-item-label {
-    padding: 16px 42px 0 5px;
-}
-
-.seacrhContainer {
-    width: 20rem;
-    margin-top: 29px;
-    left: 50%;
-    position: absolute;
-    right: 50%;
-    transform: translate(-50%, -50%);
-    transform: translate3d(-50%, -50%, 0);
-}
-
-.cartValue {
-    position: absolute;
-    right: 2rem;
-    top: 1.2rem;
-}
-
-.searchIcon {
-    position: relative;
-    left: -23px;
-    color: black;
-    top: 1.2rem;
-}
-
-.cartIcon {
-    position: absolute;
-    top: 1rem;
-    right: 5rem;
-}
-
-.myAccount {
-    top: .5rem;
-    right: 8rem;
-    position: absolute;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .expandIcon {
-    position: relative;
-    left: 4px;
-    top: 9px;
+    padding-right: 20px;
 }
 
 .searchBox {
     box-sizing: border-box;
     color: rgb(51, 51, 51);
     font-size: 12px;
-    height: 36px;
+    height: 30px;
     margin-right: -43px;
-    width: 100%;
+    width: 20rem;
     border-radius: 18px;
     border-width: 0px;
     border-style: initial;
@@ -139,4 +98,9 @@
 .pointsDetail {
     display: flex;
     justify-content: center;
+}
+
+.centerAlign {
+    display: flex;
+    align-items: center;
 }
