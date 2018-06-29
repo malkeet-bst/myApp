@@ -1,14 +1,19 @@
+.parent {
+    margin: 0 !important;
+    background: #fff;
+}
+
 .heading {
     box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 10px 0px;
     color: rgb(255, 255, 255);
     font-size: 14px;
     font-weight: lighter;
+    background-color: rgba(28, 34, 36, 0.8);
     height: 60px;
     display: flex;
     align-items: center;
-    position: fixed;
+    position: relative;
     width: 100%;
-    background: lightslategrey;
     z-index: 1000;
 }
 
@@ -27,35 +32,42 @@
 }
 
 .header-item-label {
-    padding: 16px 42px 0 42px;
+    padding: 16px 42px 0 5px;
 }
 
 .seacrhContainer {
     width: 20rem;
-    margin-top: 9px;
+    margin-top: 29px;
+    left: 50%;
+    position: absolute;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
 }
-.cartValue{
-    position: relative;
-    right: -68px;
-    top: 17px;
+
+.cartValue {
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
 }
+
 .searchIcon {
     position: relative;
     left: -23px;
     color: black;
-    top: 16px;
+    top: 1.2rem;
 }
 
 .cartIcon {
-    position: relative;
-    top: 16px;
-    left: 56px;
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
 }
 
 .myAccount {
-    top: 6px;
-    padding-left: 30px;
-    position: relative;
+    top: .5rem;
+    right: 8rem;
+    position: absolute;
 }
 
 .expandIcon {
@@ -80,11 +92,51 @@
     padding: 0px 56px 0px 16px;
 }
 
-/* .header-item--address:before{
-    content: "r";
-    font-family: IconFont;
-    font-style: normal;
-    font-size: 16px;
-    left: 0px;
-    position: absolute;
-} */
+.store-items {
+    position: relative;
+    width: 100%;
+}
+
+.store-item {
+    background-color: #FFF;
+    border-radius: 6px;
+    padding: 0;
+    min-height: 270px;
+    max-height: 270px;
+    min-width: 190px;
+    max-width: 190px;
+    position: relative;
+    overflow: hidden;
+}
+
+.listItems {
+    display: flex;
+    padding-top: 1.2rem;
+    margin: 12px;
+    border-radius: 14px;
+    flex-direction: column;
+    padding-bottom: 1.2rem;
+    padding: 1.2rem 1.5rem;
+}
+
+.listContainer {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap
+}
+
+.pointSummary {
+    word-wrap: break-word;
+    width: 76px;
+    padding-top: 11px;
+}
+
+.itemImage {
+    height: 163px;
+    width: 108px;
+}
+
+.pointsDetail {
+    display: flex;
+    justify-content: center;
+}
