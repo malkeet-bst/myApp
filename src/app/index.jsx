@@ -34,6 +34,7 @@ class App extends React.Component {
   };
 
   showGame = () => {
+    document.getElementById("demo").innerHTML = "";
     let shuffledSeq = this.shuffle([
       "#FFB150",
       "#FF5A5F",
@@ -50,10 +51,13 @@ class App extends React.Component {
   };
   checkColors = () => {
     let correctColor = [];
+    let count = 0;
+
     for (var index = 0; index < this.state.correctSequence.length; index++) {
       if (this.state.correctSequence.indexOf(this.state.color[index]) !== -1) {
         if (this.state.correctSequence[index] == this.state.color[index]) {
           correctColor[index] = "black";
+          count = count + 1;
         } else {
           correctColor[index] = "red";
         }
@@ -61,10 +65,40 @@ class App extends React.Component {
         correctColor[index] = "white";
       }
     }
-    console.log({ correctColor });
     let shuffledArr = this.shuffle(correctColor);
-    console.log({ shuffledArr });
     this.setState({ correctColor: shuffledArr });
+    if (count !== this.state.correctSequence.length) {
+      let txt =
+        "Congratulations, you have cleared the first round, Press Play for next round!";
+      document.getElementById("demo").innerHTML = txt;
+      document.getElementById("game-section").style.visibility = "hidden";
+      this.setState({
+        selectedColor: "#FFB150",
+        color: ["white", "white", "white", "white"],
+        correctColor: ["white", "white", "white", "white"]
+      });
+    }
+    // if (count == this.state.correctSequence.length) {
+    //   var txt;
+    //   var r = confirm(
+    //     "Congratulations, you have cleared the first round, Press ok to play again!"
+    //   );
+    //   if (r == true) {
+    //     this.showGame();
+    //     this.setState({
+    //       selectedColor: "#FFB150",
+    //       color: ["white", "white", "white", "white"],
+    //       correctColor: ["white", "white", "white", "white"]
+    //     });
+    //   } else {
+    //     this.setState({
+    //       selectedColor: "#FFB150",
+    //       color: ["white", "white", "white", "white"],
+    //       correctColor: ["white", "white", "white", "white"]
+    //     });
+    //     document.getElementById("game-section").style.visibility = "hidden";
+    //   }
+    // }
   };
   handleClick = choice => {
     this.setState({ selectedColor: choice });
@@ -98,6 +132,7 @@ class App extends React.Component {
           <span className="MIND">MIND</span>
         </h1>
         <h1>Master Mind</h1>
+        <p id="demo" />
         <div className="rules">
           <div className="rules-toggle" onClick={this.toggleRules}>
             Show rules
@@ -106,7 +141,7 @@ class App extends React.Component {
             Try to guess the pattern, in both order and color, within ten turns.
             After submitting a row, a small black peg is placed for each code
             peg from the guess which is correct in both color and position. A
-            white peg indicates the existence of a correct color code peg placed
+            red peg indicates the existence of a correct color code peg placed
             in the wrong position. More info on{" "}
             <a
               href="https://en.wikipedia.org/wiki/Mastermind_(board_game)"
