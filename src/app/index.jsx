@@ -7,7 +7,7 @@ class App extends React.Component {
     super();
     this.state = {
       selectedColor: "#FFB150",
-      correctSequence: ["#FFB150", "#FF5A5F", "#007A87", "#7B0051"],
+
       color: ["white", "white", "white", "white"],
       correctColor: ["white", "white", "white", "white"]
     };
@@ -33,11 +33,30 @@ class App extends React.Component {
     return array;
   };
 
+  showGame = () => {
+    let shuffledSeq = this.shuffle([
+      "#FFB150",
+      "#FF5A5F",
+      "#8CE071",
+      "#00D1C1",
+      "#007A87",
+      "#7B0051"
+    ]).slice(0, 4);
+    console.log({ shuffledSeq });
+    this.setState({
+      correctSequence: shuffledSeq
+    });
+    document.getElementById("game-section").style.visibility = "visible";
+  };
   checkColors = () => {
     let correctColor = [];
     for (var index = 0; index < this.state.correctSequence.length; index++) {
-      if (this.state.correctSequence[index] == this.state.color[index]) {
-        correctColor[index] = "black";
+      if (this.state.correctSequence.indexOf(this.state.color[index]) !== -1) {
+        if (this.state.correctSequence[index] == this.state.color[index]) {
+          correctColor[index] = "black";
+        } else {
+          correctColor[index] = "red";
+        }
       } else {
         correctColor[index] = "white";
       }
@@ -56,11 +75,52 @@ class App extends React.Component {
     tempColor[index] = this.state.selectedColor;
     this.setState({ color: tempColor });
   };
+  toggleRules = e => {
+    if (e.target.textContent == "Show rules") {
+      document.getElementById("info").style.display = "inherit";
+      e.target.textContent = "Hide rules";
+    } else {
+      document.getElementById("info").style.display = "none";
+      e.target.textContent = "Show rules";
+    }
+  };
+
   render() {
     return (
       <div className="main">
+        <h1>
+          <span className="M">M</span>
+          <span className="A">A</span>
+          <span className="S">S</span>
+          <span className="T">T</span>
+          <span className="E">E</span>
+          <span className="R">R</span>
+          <span className="MIND">MIND</span>
+        </h1>
         <h1>Master Mind</h1>
-        <div className="parent">
+        <div className="rules">
+          <div className="rules-toggle" onClick={this.toggleRules}>
+            Show rules
+          </div>
+          <p className="info" id="info">
+            Try to guess the pattern, in both order and color, within ten turns.
+            After submitting a row, a small black peg is placed for each code
+            peg from the guess which is correct in both color and position. A
+            white peg indicates the existence of a correct color code peg placed
+            in the wrong position. More info on{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/Mastermind_(board_game)"
+              target="_blank"
+            >
+              Wikipedia
+            </a>
+          </p>
+
+          <button className="play" onClick={this.showGame}>
+            Play
+          </button>
+        </div>
+        <div className="game-section" id="game-section">
           <section className="main-section">
             <svg height="38" width="38">
               <circle
@@ -107,12 +167,7 @@ class App extends React.Component {
                 fill={this.state.color[3]}
               />
             </svg>
-            <span
-              onClick={this.checkColors}
-              className="material-icons expandIcon"
-            >
-              done
-            </span>
+            <button onClick={this.checkColors}>Check</button>
             <div className="correct-colors">
               <div>
                 <svg height="18" width="18">
@@ -172,7 +227,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#FFB150"
               />
-            </svg>
+            </svg>#FFB150
             <svg height="38" width="38">
               <circle
                 id="main-color2"
@@ -184,7 +239,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#FF5A5F"
               />
-            </svg>
+            </svg>#FF5A5F
             <svg height="38" width="38">
               <circle
                 id="main-color3"
@@ -196,7 +251,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#8CE071"
               />
-            </svg>
+            </svg>#8CE071
             <svg height="38" width="38">
               <circle
                 id="main-color4"
@@ -208,7 +263,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#00D1C1"
               />
-            </svg>
+            </svg>#00D1C1
             <svg height="38" width="38">
               <circle
                 id="main-color5"
@@ -220,7 +275,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#007A87"
               />
-            </svg>
+            </svg>#007A87
             <svg height="38" width="38">
               <circle
                 id="main-color6"
@@ -232,7 +287,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#7B0051"
               />
-            </svg>
+            </svg>#7B0051
           </aside>
         </div>
       </div>
