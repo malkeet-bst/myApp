@@ -1,124 +1,25 @@
-.parent {
-    margin: 0 !important;
-    background-color: #fff;
-}
 
-.heading {
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 10px 0px;
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    font-weight: lighter;
-    background-color: rgba(28, 34, 36, 0.8);
-    height: 60px;
+body{
+    background: #F4F4F4;
+    font-family: serif;
     display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    z-index: 1000;
-}
-
-.heading .logo {
-    width: 36px;
-}
-
-.header-item {
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.expandIcon {
-    padding-right: 20px;
-}
-
-.searchBox {
-    box-sizing: border-box;
-    color: rgb(51, 51, 51);
-    font-size: 12px;
-    height: 30px;
-    width: 24vw;
-    border-radius: 18px;
-    border-width: 0px;
-    border-style: initial;
-    border-color: initial;
-    border-image: initial;
-    outline: 0px;
-    padding: 0px 10px ;
-}
-
-.store-items {
-    position: relative;
-    width: 100%;
-}
-
-.store-item {
-    background-color: #FFF;
-    border-radius: 6px;
-    padding: 0;
-    min-height: 270px;
-    max-height: 270px;
-    min-width: 190px;
-    max-width: 190px;
-    position: relative;
-    overflow: hidden;
-}
-
-.listItems {
-    display: flex;
-    align-items: center;
-    margin: 12px;
-    width: 290px;
-    background: white;
-    border-radius: 14px;
-    flex-direction: column;
-    border: 1px solid lightgrey;
-}
-.listItems:hover{
-    border: 1px solid #000;
-    /* background: darkgray; */
-    cursor: pointer;
-}
-.listContainer {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    padding: 0px;
-    margin: 0px;
-    flex-wrap: wrap
-}
-
-.pointSummary {
-    margin: -17px 0 23px;
-    word-wrap: break-word;
-}
-
-.itemImage {
-    height: 163px;
-    /* width: 108px; */
-}
-
-
-.pointsDetail {
-    display: flex;
-    justify-content: center;
-}
-
-.centerAlign {
-    display: flex;
-    align-items: center;
-}
-/* .priceClass{
-    display: flex;
+    margin-top: 50px;
     align-items: baseline;
-} */
-.priceValue{
-    color: #333;
-    font-weight: bold;
-    padding-right: 10px;
-    display: inline-block;
-    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.main-section{
+    display: flex;
+    align-items: center
+}
+
+.correct-colors{
+    flex-direction: column;
+    margin-left: 5rem;
+
+}
+.select-color{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column
 }
