@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <body>
-        {/* <h1>Master Mind</h1> */}
+        <h1>Master Mind</h1>
         <section className="main-section">
           <svg height="44" width="44">
             <circle
