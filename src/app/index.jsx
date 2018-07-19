@@ -17,7 +17,6 @@ class App extends React.Component {
   handleClick = choice => {
     debugger;
     this.setState({ selectedColor: choice });
-    //document.getElementById(id).css({ "strokeWidth": "3" });
   };
 
   fillColor = color => {
