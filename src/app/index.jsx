@@ -34,6 +34,11 @@ class App extends React.Component {
   };
 
   showGame = () => {
+    this.setState({
+      selectedColor: "#FFB150",
+      color: ["white", "white", "white", "white"],
+      correctColor: ["white", "white", "white", "white"]
+    });
     document.getElementById("demo").innerHTML = "";
     let shuffledSeq = this.shuffle([
       "#FFB150",
@@ -67,7 +72,7 @@ class App extends React.Component {
     }
     let shuffledArr = this.shuffle(correctColor);
     this.setState({ correctColor: shuffledArr });
-    if (count !== this.state.correctSequence.length) {
+    if (count == this.state.correctSequence.length) {
       let txt =
         "Congratulations, you have cleared the first round, Press Play for next round!";
       document.getElementById("demo").innerHTML = txt;
@@ -142,7 +147,7 @@ class App extends React.Component {
             After submitting a row, a small black peg is placed for each code
             peg from the guess which is correct in both color and position. A
             red peg indicates the existence of a correct color code peg placed
-            in the wrong position. More info on{" "}
+            in the wrong position. More info on
             <a
               href="https://en.wikipedia.org/wiki/Mastermind_(board_game)"
               target="_blank"
@@ -152,7 +157,7 @@ class App extends React.Component {
           </p>
 
           <button className="play" onClick={this.showGame}>
-            Play
+            Start New Game
           </button>
         </div>
         <div className="game-section" id="game-section">
@@ -224,7 +229,7 @@ class App extends React.Component {
                     strokeWidth="1"
                     fill={this.state.correctColor[1]}
                   />
-                </svg>{" "}
+                </svg>
               </div>
               <div>
                 <svg height="18" width="18">
@@ -246,7 +251,7 @@ class App extends React.Component {
                     strokeWidth="1"
                     fill={this.state.correctColor[3]}
                   />
-                </svg>{" "}
+                </svg>
               </div>
             </div>
           </section>
@@ -262,7 +267,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#FFB150"
               />
-            </svg>#FFB150
+            </svg>
             <svg height="38" width="38">
               <circle
                 id="main-color2"
@@ -274,7 +279,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#FF5A5F"
               />
-            </svg>#FF5A5F
+            </svg>
             <svg height="38" width="38">
               <circle
                 id="main-color3"
@@ -286,7 +291,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#8CE071"
               />
-            </svg>#8CE071
+            </svg>
             <svg height="38" width="38">
               <circle
                 id="main-color4"
@@ -298,7 +303,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#00D1C1"
               />
-            </svg>#00D1C1
+            </svg>
             <svg height="38" width="38">
               <circle
                 id="main-color5"
@@ -310,7 +315,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#007A87"
               />
-            </svg>#007A87
+            </svg>
             <svg height="38" width="38">
               <circle
                 id="main-color6"
@@ -322,7 +327,7 @@ class App extends React.Component {
                 strokeWidth="1"
                 fill="#7B0051"
               />
-            </svg>#7B0051
+            </svg>
           </aside>
         </div>
       </div>
